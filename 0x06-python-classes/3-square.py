@@ -1,21 +1,17 @@
 #!/usr/bin/python3
-"""class Square that defines a square"""
-
-
 class Square:
-    """class Square that defines a square"""
-    __size = None
+    """ A class that defines a square by its size"""
 
     def __init__(self, size=0):
-        """Instation with optional size"""
-        if type(size) is int:
-            if size >= 0:
-                self.__size = size
-            else:
-                raise ValueError("Size must be >= 0")
-        else:
+        """ Method to initialize the square object"""
+
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
 
     def area(self):
-        """Public instance method area"""
-        return self.__size * self.
+        """ Method that returns the square are of the object"""
+        return (self.__size ** 2)
